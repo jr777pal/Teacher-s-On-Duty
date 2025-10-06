@@ -1,0 +1,202 @@
+@import url('https://api.fontshare.com/css?f[]=clash-grotesk@300,400,500,600,700&display=swap');
+
+/* Reset margins and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Clash Grotesk', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the main container take up the full height of the viewport */
+.container {
+    background-color: rgba(5, 4, 19, 0.9); /* Semi-transparent dark background */
+    padding: 50px; /* Padding for better spacing */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    max-width: 600px; /* Wider container */
+    width: 100%; /* Full width */
+    margin: auto; /* Center the container */
+    text-align: center;
+    
+}
+
+h2 {
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 0.8px;
+    align-self: flex-start; /* Align labels to the left */
+}
+
+input, textarea {
+    width: 100%; /* Full width for inputs */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+textarea {
+    resize: none;
+    height: 100px; /* Fixed height for textarea */
+}
+
+/* Button styles */
+button {
+    --glow-color:rgb(190, 176, 255);
+    --glow-spread-color:rgba(31, 28, 75, 0.9);
+    --enhance-glow-color:rgb(34, 30, 73);
+    --btn-color:rgb(30, 13, 46);
+    padding: 12px 20px;
+    border: 0.25em solid var(--glow-color);
+    font-weight: bold;
+
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em 0.25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+    text-shadow: 0 0 0.5em var(--glow-color);
+    position: relative;
+    background-color: #000;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+
+button ::after{
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: 0.7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1,0.6);
+    transform: ease;
+}
+
+button:hover {
+
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em 0.25em var(--glow-color),
+ 0 0 4em 2em var(--glow-spread-color),
+ insert 0 0 0.75em 0.25em var(--glow-color);
+ letter-spacing: 0.5em;
+ color: black;
+ text-transform:inherit;
+ font-weight: bold 1em;
+ transition: transform 0.3s all;
+
+}
+
+button :active{
+    box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 0.75em 0.25em var(--glow-color);
+}
+
+.terms-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.terms-container input {
+    margin-right: 0px;
+}
+
+.terms-container a {
+    color: aqua;
+    text-decoration: underline;
+}
+
+.terms-container a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(5, 4, 19, 0.9); /* Dark semi-transparent theme */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    position: relative; /* Fixed footer at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width of the screen */
+}
+
+footer a {
+    color: #ff6347;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+}
+

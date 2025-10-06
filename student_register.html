@@ -1,0 +1,102 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student - Complete Registration</title>
+    <link rel="stylesheet" href="style_student.css">
+    <script src="student_form_validation.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="logo1.png" alt="Your Logo" class="logo">
+        </a>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <h2>Student Complete Registration</h2>
+
+        <!-- Display error or success message -->
+        <?php if (isset($_SESSION['error'])): ?>
+            <p class="error-message"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+        <?php endif; ?>
+        <?php if (isset($_SESSION['success'])): ?>
+            <p class="success-message"><?php echo $_SESSION['success']; unset($_SESSION['success']); ?></p>
+        <?php endif; ?>
+
+        <form id="registration-form" action="student_reg.php" method="POST">
+            <!-- Account Information -->
+            
+                <legend style="color: white;">Account Information</legend>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+            
+
+            <br><br>
+
+            <!-- Personal Information -->
+           
+                <legend style="color: white;">Personal Information</legend>
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first_name" placeholder="Enter your first name" required>
+                
+                <label for="middle-name">Middle Name:</label>
+                <input type="text" id="middle-name" name="middle_name" placeholder="Enter your middle name">
+                
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Enter your last name" required>
+                
+                <label for="phone-no">Phone Number:</label>
+                <input type="tel" id="phone-no" name="phone_no" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+                
+                <label for="whatsapp-no">WhatsApp Number:</label>
+                <input type="tel" id="whatsapp-no" name="whatsapp_no" placeholder="Enter your WhatsApp number" required pattern="[0-9]{10}">
+                
+                <label for="qualifications">Qualifications:</label>
+                <input type="text" id="qualifications" name="qualifications" placeholder="Enter your qualifications" required>
+                
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required min="18">
+           
+
+            <!-- Terms and Conditions -->
+            <div class="terms-container">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    I accept the <a href="terms_and_condition_teachers.html" target="_blank">Terms & Conditions</a>.
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Teacher's On Duty. All Rights Reserved.</p>
+        <p>
+            <a href="privacy_policy.html">Privacy Policy</a> |
+            <a href="terms_of_service.html">Terms of Service</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

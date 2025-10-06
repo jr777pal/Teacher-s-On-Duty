@@ -1,0 +1,101 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher - Complete Registration</title>
+    <link rel="stylesheet" href="styles_teacher.css">
+    <script src="form_validation.js"></script> <!-- Link to external JS file -->
+    
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo Section -->
+    <div class="logo-container" style="text-align: center;">
+        <a href="index.html">
+            <img src="logo1.png" alt="Your Logo" style="width: 350px; height: 100px;">
+        </a>
+    </div>
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <h2>Complete Registration</h2>
+
+        <!-- Display error message if username or email exists -->
+        <?php if (isset($_SESSION['error'])): ?>
+            <p style="color: red;"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+        <?php endif; ?>
+
+    <form id="registration-form" action="/register" method="POST" onsubmit="return validateForm();">
+            <!-- Initial registration details -->
+            <h3 style="color: aliceblue;">Account Information</h3>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter Your Username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" placeholder="Confirm Your Password" required>
+
+            <br><br>
+
+            <!-- Additional details -->
+            <h3 style="color: aliceblue;">Personal Information</h3>
+            
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first_name" placeholder="Enter Your First Name" required>
+
+            <label for="middle-name">Middle Name:</label>
+            <input type="text" id="middle-name" name="middle_name" placeholder="Enter Your Middle Name">
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last_name" placeholder="Enter Your Last Name" required>
+
+            <label for="pan-no">PAN Number:</label>
+            <input type="text" id="pan-no" name="pan_no" placeholder="Enter Your PAN Number" required>
+
+            <label for="aadhar-no">Aadhar Number:</label>
+            <input type="text" id="aadhar-no" name="aadhar_no" placeholder="Enter Your Aadhar Number" required>
+
+            <label for="phone-no">Phone Number:</label>
+            <input type="tel" id="phone-no" name="phone_no" placeholder="Enter Your Phone Number" required>
+
+            <label for="whatsapp-no">WhatsApp Number:</label>
+            <input type="tel" id="whatsapp-no" name="whatsapp_no" placeholder="Enter Your WhatsApp Number" required>
+
+            <label for="qualifications">Qualifications:</label>
+            <input type="text" id="qualifications" name="qualifications" placeholder="Enter Your Qualifications" required>
+
+            <label for="description">Description of what you teach:</label>
+            <textarea id="description" name="description" placeholder="Briefly describe what you teach" rows="4" required></textarea>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter Your Age" required>
+
+            <!-- Terms and Conditions Checkbox -->
+            <div class="terms-container">
+                  <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I accept the <a href="terms_and_condition_teachers.html" target="_blank">T&C</a></label>
+           </div>
+            
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2024 Teacher's On Duty. All Rights Reserved.</p>
+        <p><a href="privacy_policy.html">Privacy Policy</a> | <a href="terms_of_service.html">Terms of Service</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

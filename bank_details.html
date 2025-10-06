@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Details</title>
+  <link rel="stylesheet" href="styles_teacher.css">
+  <style>
+    /* Basic styling, you can expand these in styles_teacher.css */
+    .bank-details-container {
+      text-align: center;
+      background-color: rgba(5, 4, 19, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      margin: 100px auto;
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1em;
+      width: 100%;
+      max-width: 400px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .footer-container {
+      text-align: center;
+      margin-top: 20px;
+      color: #ffffff;
+    }
+    .footer-container a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="bank-details-container">
+    <h2>Enter Your Bank Details</h2>
+
+    <form action="submit_bank_details.php" method="POST">
+        
+      <label for="accountName">Account Name:</label>
+      <input type="text" id="accountName" name="accountName" placeholder="Account Holder's Name" required>
+      
+      <label for="accountNumber">Account Number:</label>
+      <input type="text" id="accountNumber" name="accountNumber" placeholder="Account Number" required>
+      
+      <label for="reAccountNumber">Re-Enter Account Number:</label>
+      <input type="text" id="reAccountNumber" name="reAccountNumber" placeholder="Re-Enter Account Number" required>
+      
+      <label for="bankName">Bank Name:</label>
+      <input type="text" id="bankName" name="bankName" placeholder="Bank Name" required>
+      
+      <label for="ifscCode">IFSC Code:</label>
+      <input type="text" id="ifscCode" name="ifscCode" placeholder="IFSC Code" required>
+      
+      <label for="upiid">UPI ID:</label>
+      <input type="text" id="upiid" name="upiid" placeholder="UPI ID" required>
+      
+      <button type="submit">Submit</button>
+      
+        
+    </form>
+     
+    
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2024 Teacher's On Duty. All Rights Reserved.</p>
+      <p><a href="privacy_policy.html">Privacy Policy</a> | <a href="terms_of_service.html">Terms of Service</a></p>
+    </div>
+  </footer>
+</body>
+</html>

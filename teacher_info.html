@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You!</title>
+  <link rel="stylesheet" href="styles_teacher.css">
+  <style>
+    /* Basic styling, you can expand these in styles_teacher.css */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      
+    }
+    .thankyou-container {
+      text-align: center;
+      background-color: rgba(5, 4, 19, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 100%;
+      animation: fadeIn 1.5s ease;
+    }
+    .thankyou-container h1 {
+      font-size: 2.5em;
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    .thankyou-container p {
+      font-size: 1.2em;
+      color: #ffffff;
+    }
+    .confetti {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .thankyou-container {
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.thankyou-container h1 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.thankyou-container button:hover {
+  background-color: #388E3C;
+  transform: scale(1.05);
+}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="thankyou-container">
+    <h1>Thank You!</h1>
+    <p>Thank You fou joining us as a team. <br><B>Please Enter Your Bank Detalis</B> if you already entered dont re enter it. Please Be Patience We Will Reach You Out Soon.
+    <br><br> We Will Contant You Through WhatsApp For Further Verification. </p>
+    <button onclick="goBack()" style="margin-top: 20px; padding: 10px 20px; font-size: 1em; border: none; color: #fff; background-color: #4CAF50; border-radius: 5px; cursor: pointer;">Go Back</button>
+    <button onclick="redirectToPage()" style="margin-top: 20px; padding: 10px 20px; font-size: 1em; border: none; color: #fff; background-color: #008CBA; border-radius: 5px; cursor: pointer; margin-left: 10px;">Link Your Bank</button>  
+</div>
+  <canvas class="confetti"></canvas>
+  
+  <script src="thankyou.js"></script>
+
+  <footer style="position: relative;">
+    <div class="footer-container">
+        <p>&copy; 2024 Teacher's On Duty. All Rights Reserved.</p>
+        <p><a href="privacy_policy.html">Privacy Policy</a> | <a href="terms_of_service.html">Terms of Service</a></p>
+    </div>
+</footer>
+</body>
+</html>
